@@ -4,6 +4,9 @@ This repository aims to provide some basic firmware examples for Microchip
 PIC18F2550, based on XC8 Compiler. That's because, unfortunately, MPLAB Code
 Configurator doesn't support this chip.
 
+The included examples are also compatible with PIC18F2455, PIC18F4455 and
+PIC18F4550, since it's the same datasheet.
+
 ## Requirements
 
 - [MPLAB X IDE]
@@ -14,6 +17,8 @@ Configurator doesn't support this chip.
 ## Available examples
 
 - `blink`: toggles pin RB7 every 1 second
+- `serial/serial_basic.c`: prints numbers and strings to Serial and then echoes
+    data back
 
 ## Base circuit
 
