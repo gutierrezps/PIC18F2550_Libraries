@@ -17,6 +17,7 @@ PIC18F4550, since it's the same datasheet.
 ## Available examples
 
 - `blink`: toggles pin RB7 every 1 second
+- `lcd`: alphanumeric LCD (1602-like) library
 - `print`: support library for printing strings, ints and floats
 - `serial/serial_basic.c`: prints numbers and strings to Serial and then echoes
     data back
