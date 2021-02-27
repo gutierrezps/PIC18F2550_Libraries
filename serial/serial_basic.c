@@ -1,8 +1,8 @@
 /*
- * PIC18F2550 Examples - Serial basic
+ * PIC18F2550 Examples - Basic Serial
  *
- * Prints numbers strings to Serial on start-up, and then sends back
- * all data received. 115600 bps baud rate is used.
+ * Prints a message to Serial on start-up, and then sends back
+ * all data received. 57600 bps baud rate is used.
  *
  * Serial reading is not interrupt based. The PIC's input buffer has only
  * two bytes, so any data received while the buffer is full will be lost.
@@ -13,6 +13,8 @@
  * RC7 (RX) --- TX
  * GND -------- GND
  *
+ * Download and add "print.h" and "print.c" to the project.
+ *
  * @author Gutierrez PS
  * @see https://github.com/gutierrezps/PIC18F2550_Examples
  *
@@ -20,16 +22,17 @@
 
 #include <xc.h>
 #include "config.h"
+#include "print.h"
 
 
 /**
- * Initialize Serial on pins RC6 (TX) and RC7 (RX), with 115200 bps baud rate
+ * Initialize Serial on pins RC6 (TX) and RC7 (RX), with 57600 bps baud rate
  */
 void serial_begin() {
     // Assuming 8 MHz clock speed...
     BRGH = 1;       // high speed
     BRG16 = 1;      // 16-bit BRG
-    SPBRG = 16;     // 115200 bps baud rate
+    SPBRG = 34;     // 57600 bps baud rate
 
     SYNC = 0;       // asynchronous Serial
     SPEN = 1;       // enable Serial port
@@ -48,54 +51,10 @@ void serial_begin() {
 /**
  * Writes a single byte to Serial.
  */
-void serial_write(unsigned char c) {
+void serial_write(char c) {
     while (!TXIF) NOP();    // wait TXREG to be empty
     TXREG = c;
-}
-
-
-/**
- * Writes each char of a null-terminated string to Serial.
- */
-void serial_print_str(const char *str) {
-    while (*str != '\0') {
-        serial_write(*str);
-        str++;
-    }
-}
-
-/**
- * Prints a signed integer (between -32767 and 32767) to Serial.
- */
-void serial_print_int(int number) {
-    if (number == 0) {
-        serial_write('0');
-        return;
-    }
-
-    if (number < 0) {
-        serial_write('-');
-        number *= -1;
-    }
-
-    char buffer[6] = {0};
-    char i = 0;
-
-    while (number != 0 && i != 5) {
-        buffer[i] = number % 10;
-        number /= 10;
-        ++i;
-    }
-
-    if (number != 0) {
-        serial_print_str("overflow");
-    }
-    else {
-        while (i != 0) {
-            serial_write('0' + buffer[i-1]);
-            --i;
-        }
-    }
+    NOP();
 }
 
 
@@ -124,6 +83,19 @@ unsigned char serial_read() {
 }
 
 
+void serial_print_str(const char *str) {
+    print_str(str, serial_write);
+}
+
+void serial_print_int(int number) {
+    print_int(number, serial_write);
+}
+
+void serial_print_float(float number, char decimals) {
+    print_float(number, decimals, serial_write, serial_print_int);
+}
+
+
 void main(void) {
     OSCCONbits.IRCF = 0b111;    // 8 MHz INTOSC frequency
     OSCCONbits.SCS = 0b10;      // Select INTOSC as system clock
@@ -135,8 +107,11 @@ void main(void) {
     serial_print_str("Here's the minimum int: ");
     serial_print_int(-32767);
 
-    serial_print_str("\nAnd here's the maximum int: ");
+    serial_print_str("\nHere's the maximum int: ");
     serial_print_int(32767);
+
+    serial_print_str("\nAnd here's a float: ");
+    serial_print_float(12.3456, 5);
 
     serial_print_str("\nNow I'll echo what you say\n");
 
