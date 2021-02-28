@@ -1,8 +1,8 @@
 /*
  * PIC18F2550 Libraries - Blink
  *
- * Toggles output pin B7 every 1 second. Using 8 MHz internal oscillator,
- * so no external crystal is needed.
+ * The most basic code. Toggles output pin B7 every 1 second.
+ * Using 8 MHz internal oscillator, so no external crystal is needed.
  *
  * Suggested schematic (starting from base circuit):
  * RB7 --- 1k resistor --- LED --- GND
