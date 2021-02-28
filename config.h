@@ -1,5 +1,5 @@
 /*
- * PIC18F2550 Examples - Configuration file
+ * PIC18F2550 Libraries - Configuration file
  *
  * Check all available settings and values in XC8 docs (pic18_chipinfo.html).
  * It's located somewhere like C:/Program Files/Microchip/xc8/v2.32/docs.
@@ -13,7 +13,7 @@
  *      Quote from section 5.2.5 - Configuration Bit Access
  *
  * @author Gutierrez PS
- * @see https://github.com/gutierrezps/PIC18F2550_Examples
+ * @see https://github.com/gutierrezps/PIC18F2550_Libraries
  *
  */
 

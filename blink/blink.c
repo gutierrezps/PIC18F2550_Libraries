@@ -1,5 +1,5 @@
 /*
- * PIC18F2550 Examples - Blink
+ * PIC18F2550 Libraries - Blink
  *
  * Toggles output pin B7 every 1 second. Using 8 MHz internal oscillator,
  * so no external crystal is needed.
@@ -8,7 +8,7 @@
  * RB7 --- 1k resistor --- LED --- GND
  *
  * @author Gutierrez PS
- * @see https://github.com/gutierrezps/PIC18F2550_Examples
+ * @see https://github.com/gutierrezps/PIC18F2550_Libraries
  *
  */
 

@@ -1,5 +1,5 @@
 /*
- * PIC18F2550 Examples - Basic Serial
+ * PIC18F2550 Libraries - Basic Serial
  *
  * Prints a message to Serial on start-up, and then sends back
  * all data received. 57600 bps baud rate is used.
@@ -16,7 +16,7 @@
  * Download and add "print.h" and "print.c" to the project.
  *
  * @author Gutierrez PS
- * @see https://github.com/gutierrezps/PIC18F2550_Examples
+ * @see https://github.com/gutierrezps/PIC18F2550_Libraries
  *
  */
 

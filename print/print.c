@@ -1,10 +1,10 @@
 /*
- * PIC18F2550 Examples - Print utils
+ * PIC18F2550 Libraries - Print utils
  *
  * Generic print functions. See print.h for details.
  *
  * @author Gutierrez PS
- * @see https://github.com/gutierrezps/PIC18F2550_Examples
+ * @see https://github.com/gutierrezps/PIC18F2550_Libraries
  *
  */
 

@@ -1,5 +1,5 @@
 /*
- * PIC18F2550 Examples - Alphanumeric Liquid Crystal Display (LCD)
+ * PIC18F2550 Libraries - Alphanumeric Liquid Crystal Display (LCD)
  *
  * Library for 1602 LCDs. Prints numbers and strings at startup.
  *
@@ -31,7 +31,7 @@
  * Download and add "print.h" and "print.c" to the project.
  *
  * @author Gutierrez PS
- * @see https://github.com/gutierrezps/PIC18F2550_Examples
+ * @see https://github.com/gutierrezps/PIC18F2550_Libraries
  *
  */
 

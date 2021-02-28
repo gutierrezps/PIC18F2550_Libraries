@@ -1,5 +1,5 @@
 /*
- * PIC18F2550 Examples - Print utils
+ * PIC18F2550 Libraries - Print utils
  *
  * Generic print functions. Pass as a parameter the function that writes
  * a single character.
@@ -12,7 +12,7 @@
  * Where serial_write is the function that writes a single character to Serial.
  *
  * @author Gutierrez PS
- * @see https://github.com/gutierrezps/PIC18F2550_Examples
+ * @see https://github.com/gutierrezps/PIC18F2550_Libraries
  *
  */
 

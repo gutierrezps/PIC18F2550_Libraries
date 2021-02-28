@@ -1,11 +1,11 @@
-# PIC18F2550 Examples
+# PIC18F2550 Libraries
 
-This repository aims to provide some basic firmware examples for Microchip
-PIC18F2550, based on XC8 Compiler. That's because, unfortunately, MPLAB Code
-Configurator doesn't support this chip.
+This repository aims to provide some basic libraries for Microchip PIC18F2550,
+based on XC8 Compiler.
 
-The included examples are also compatible with PIC18F2455, PIC18F4455 and
-PIC18F4550, since it's the same datasheet.
+The included libraries are also compatible with PIC18F2455, PIC18F4455 and
+PIC18F4550, since it's the same datasheet. They may also be compatible with
+other PIC18
 
 ## Requirements
 
@@ -14,9 +14,9 @@ PIC18F4550, since it's the same datasheet.
 - PIC18F2550 circuit
 - PIC programmer (PICkit2, K150...)
 
-## Available examples
+## Available libraries
 
-- `blink`: toggles pin RB7 every 1 second
+- `blink`: the most basic code, toggles pin RB7 every 1 second
 - `lcd`: alphanumeric LCD (1602-like) library
 - `print`: support library for printing strings, ints and floats
 - `serial/serial_basic.c`: prints numbers and strings to Serial and then echoes
@@ -66,7 +66,7 @@ The following instructions are based on MPLAB X IDE v5.45:
 ### Configuration file
 
 Unless stated in the example's README, the file `config.h` contains the
-configuration bits for all the examples in this repository, and must be
+configuration bits for all the Libraries in this repository, and must be
 included in your project.
 
 ## Resources
