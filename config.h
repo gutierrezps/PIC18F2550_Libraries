@@ -4,13 +4,17 @@
  * Check all available settings and values in XC8 docs (pic18_chipinfo.html).
  * It's located somewhere like C:/Program Files/Microchip/xc8/v2.32/docs.
  *
- * Attention to XC8 Compiler User Guide advice:
+ * Attention to XC8 Compiler User Guide advice (section 5.2.5 -  Configuration
+ * Bit Access):
  *
  *      All the bits in the Configuration Words should be programmed to
  *      prevent erratic program behavior. Do not leave them in their
  *      default/unprogrammed state.
  *
- *      Quote from section 5.2.5 - Configuration Bit Access
+ * Also,
+ *
+ *      It is recommended that the setting-value pairs be quoted to ensure that
+ *      the preprocessor does not perform macro substitution of these tokens.
  *
  * @author Gutierrez PS
  * @see https://github.com/gutierrezps/PIC18F2550_Libraries
@@ -41,7 +45,7 @@
 
 // CONFIG3H
 #pragma config "CCP2MX  = ON"       // CCP2 input/output is multiplexed with RC1
-#pragma config "PBADEN  = 1"        // PORTB A/D<4:0> pins are configured as analog input channels on Reset
+#pragma config "PBADEN  = 0"        // PORTB A/D<4:0> pins are configured as digital I/O on Reset
 #pragma config "LPT1OSC = OFF"      // Timer1 configured for higher power operation
 #pragma config "MCLRE   = ON"       // MCLR pin is enabled, RE3 input pin is disabled
 
